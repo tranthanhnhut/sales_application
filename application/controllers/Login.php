@@ -15,6 +15,14 @@ class Login extends CI_Controller
 
     public function index()
     {
+        if(isset($_POST['subLogin']))
+        {
+            $user = $this->input->post('username');
+            $pass = $this->input->post('password');
+            echo $user;
+            echo $pass;
+            die;
+        }
         $this->load->view('login/login');
     }
 }

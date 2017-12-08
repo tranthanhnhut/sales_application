@@ -16,27 +16,63 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <!-- Custom particles JavaScript-->
     <script src="<?php echo base_url() ?>css/particles.css"></script>
+    <style>
+        .panel{
+            position: absolute;
+            z-index:10;
+            width:27%;
+            height:auto;
+            top:5%;
+            left:35%;
+            z-index:100;
+        }
+        .card-header{
+            color:#fff;
+        }
+        .form-group label{
+            color:#fff;
+        }
+        .btn-primary{
+            background-color: #1b1e2129;
+            border-color: #1b1e2154;
+        }
+        .btn-primary:hover{
+            background-color: #1b1e2129;
+            border-color: #1b1e2154;
+        }
+        .btn-submit{
+            width:100%;
+            cursor: pointer;
+            border:none;
+            border-radius: 5px;
+            background: #fff;
+            padding: 2% 0;
+        }
+    </style>
 </head>
 
-<body id="particles-js" class="bg-dark">
-<div class="container">
-    <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
-        <div class="card-body">
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input class="form-control" id="exampleInputUsername" type="text" aria-describedby="emailHelp" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
-                </div>
-                <a class="btn btn-primary btn-block" href="index.html">Login</a>
-            </form>
+<body class="bg-dark">
+<div class="panel" style="display: block;">
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Đăng Nhập</div>
+            <div class="card-body">
+                <form method="post" action="<?php echo base_url('login'); ?>">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Tên đăng nhập</label>
+                        <input class="form-control" name="username" id="exampleInputUsername" type="text" placeholder="Tên đăng nhập" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Mật khẩu</label>
+                        <input class="form-control" name="password" id="exampleInputPassword" type="password" placeholder="Mật khẩu" required>
+                    </div>
+                    <button style="submit" name="subLogin" class="btn-submit ">Login</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+<div id="particles-js"></div>
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
