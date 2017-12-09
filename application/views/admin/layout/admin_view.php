@@ -1,13 +1,22 @@
+<?php
+$this->csrf = array(
+    'name' => $this->security->get_csrf_token_name(),
+    'hash' => $this->security->get_csrf_hash(),
+);
+if (!isset($this->session->userdata['id'])):
+    $this->load->view('login/login', array('csrf' => $this->csrf));
+else:
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title><?php echo $title; ?></title>
+    <link href="<?php echo base_url() ?>uploads/site/logo.ico" rel="shortcut icon" type="image/x-icon" />
+    <title><?php if(isset($title)){ echo $title; }else{ echo 'SB Admin - Start Bootstrap Template'; } ?></title>
     <!-- Bootstrap core CSS-->
     <link href="<?php echo base_url() ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
@@ -16,6 +25,20 @@
     <link href="<?php echo base_url() ?>vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url() ?>css/sb-admin.css" rel="stylesheet">
+    <style>
+        .img-circle{
+            border-radius: 50%;
+        }
+        .logo-admin{
+            padding:2% 0;
+        }
+        .logo-admin a span{
+            color:#777;
+        }
+        .logo-admin a:hover{
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -39,50 +62,24 @@
                     <span class="nav-link-text">Charts</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="tables.html">
-                    <i class="fa fa-fw fa-table"></i>
-                    <span class="nav-link-text">Tables</span>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+                    <i class="fa fa-user"></i>
+                    <span class="nav-link-text">Thành viên</span>
                 </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-wrench"></i>
-                    <span class="nav-link-text">Components</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseComponents">
+                <ul class="sidenav-second-level collapse" id="collapseMulti">
                     <li>
-                        <a href="navbar.html">Navbar</a>
+                        <a href="<?php echo base_url('wp-admin/user') ?>">Danh sách Thành viên</a>
                     </li>
                     <li>
-                        <a href="cards.html">Cards</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-file"></i>
-                    <span class="nav-link-text">Example Pages</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-                    <li>
-                        <a href="login.html">Login Page</a>
-                    </li>
-                    <li>
-                        <a href="register.html">Registration Page</a>
-                    </li>
-                    <li>
-                        <a href="forgot-password.html">Forgot Password Page</a>
-                    </li>
-                    <li>
-                        <a href="blank.html">Blank Page</a>
+                        <a href="#">Thêm Thành viên</a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-sitemap"></i>
-                    <span class="nav-link-text">Menu Levels</span>
+                    <i class="fa fa-list"></i>
+                    <span class="nav-link-text">Menu</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseMulti">
                     <li>
@@ -110,10 +107,50 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" href="tables.html">
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">Tables</span>
+                </a>
+            </li>
+<!--            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">-->
+<!--                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">-->
+<!--                    <i class="fa fa-fw fa-wrench"></i>-->
+<!--                    <span class="nav-link-text">Components</span>-->
+<!--                </a>-->
+<!--                <ul class="sidenav-second-level collapse" id="collapseComponents">-->
+<!--                    <li>-->
+<!--                        <a href="navbar.html">Navbar</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="cards.html">Cards</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
+                    <span class="nav-link-text">Pages</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+                    <li>
+                        <a href="login.html">Login Page</a>
+                    </li>
+                    <li>
+                        <a href="register.html">Registration Page</a>
+                    </li>
+                    <li>
+                        <a href="forgot-password.html">Forgot Password Page</a>
+                    </li>
+                    <li>
+                        <a href="blank.html">Blank Page</a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
                 <a class="nav-link" href="#">
                     <i class="fa fa-fw fa-link"></i>
-                    <span class="nav-link-text">Link</span>
+                    <span class="nav-link-text">Link URL</span>
                 </a>
             </li>
         </ul>
@@ -202,17 +239,12 @@
                     <a class="dropdown-item small" href="#">View all alerts</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Search for...">
-                        <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-                    </div>
-                </form>
+            <li class="nav-item logo-admin">
+                <a href="#">
+                    <img src="<?php echo base_url('uploads/site/user.png') ?>" class="img-circle" alt="Avatar">
+                    <span><?php echo $this->session->userdata['user'] ?></span>
+                    <i class="icon-submenu lnr lnr-chevron-down"></i>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
@@ -224,12 +256,7 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">My Dashboard</li>
-        </ol>
+        <?php echo $breadcrum; ?>
         <?php echo $contents ?>
     </div>
     <!-- /.container-fluid-->
@@ -237,7 +264,7 @@
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">
-                <small>Copyright © Your Website 2017</small>
+                <small>Copyright © Your Website <?php echo date("Y") ?></small>
             </div>
         </div>
     </footer>
@@ -250,15 +277,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Đăng xuất</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Chọn "Đăng xuất" nếu bạn muốn kết thúc phiên làm việc hiện tại.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy bỏ</button>
+                    <a class="btn btn-primary" href="<?php echo base_url('login/logout') ?>">Đăng xuất</a>
                 </div>
             </div>
         </div>
@@ -281,3 +308,4 @@
 </body>
 
 </html>
+<?php endif;?>

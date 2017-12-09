@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin - Start Bootstrap Template</title>
+    <link href="<?php echo base_url() ?>uploads/site/logo.ico" rel="shortcut icon" type="image/x-icon" />
+    <title>Đăng nhập</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
@@ -58,6 +59,14 @@
             <div class="card-header">Đăng Nhập</div>
             <div class="card-body">
                 <form method="post" action="<?php echo base_url('login'); ?>">
+                    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                    <?php
+                        if(isset($data) ==1):
+                    ?>
+                        <div class="alert alert-danger">
+                            <strong>Error !</strong> Đăng nhập thất bại.
+                        </div>
+                    <?php endif; ?>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tên đăng nhập</label>
                         <input class="form-control" name="username" id="exampleInputUsername" type="text" placeholder="Tên đăng nhập" required>

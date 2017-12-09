@@ -54,3 +54,6 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['wp-admin'] = 'ci_Admin';
+$route['login']                     = 'login';
+$route['login/logout']              = 'login/logout';
+$route['wp-admin/user'] = 'ci_user/index';
