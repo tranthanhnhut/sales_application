@@ -30,7 +30,7 @@ else:
             border-radius: 50%;
         }
         .logo-admin{
-            padding:2% 0;
+            padding:4% 0;
         }
         .logo-admin a span{
             color:#777;
@@ -162,83 +162,83 @@ else:
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-envelope"></i>
-                    <span class="d-lg-none">Messages
-              <span class="badge badge-pill badge-primary">12 New</span>
-            </span>
-                    <span class="indicator text-primary d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>
-            </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="messagesDropdown">
-                    <h6 class="dropdown-header">New Messages:</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <strong>David Miller</strong>
-                        <span class="small float-right text-muted">11:21 AM</span>
-                        <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <strong>Jane Smith</strong>
-                        <span class="small float-right text-muted">11:21 AM</span>
-                        <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <strong>John Doe</strong>
-                        <span class="small float-right text-muted">11:21 AM</span>
-                        <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item small" href="#">View all messages</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-bell"></i>
-                    <span class="d-lg-none">Alerts
-              <span class="badge badge-pill badge-warning">6 New</span>
-            </span>
-                    <span class="indicator text-warning d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>
-            </span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-                    <h6 class="dropdown-header">New Alerts:</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-              <span class="text-success">
-                <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
-              </span>
-                        <span class="small float-right text-muted">11:21 AM</span>
-                        <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-              <span class="text-danger">
-                <strong>
-                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
-              </span>
-                        <span class="small float-right text-muted">11:21 AM</span>
-                        <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-              <span class="text-success">
-                <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
-              </span>
-                        <span class="small float-right text-muted">11:21 AM</span>
-                        <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item small" href="#">View all alerts</a>
-                </div>
-            </li>
+<!--            <li class="nav-item dropdown">-->
+<!--                <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                    <i class="fa fa-fw fa-envelope"></i>-->
+<!--                    <span class="d-lg-none">Messages-->
+<!--              <span class="badge badge-pill badge-primary">12 New</span>-->
+<!--            </span>-->
+<!--                    <span class="indicator text-primary d-none d-lg-block">-->
+<!--              <i class="fa fa-fw fa-circle"></i>-->
+<!--            </span>-->
+<!--                </a>-->
+<!--                <div class="dropdown-menu" aria-labelledby="messagesDropdown">-->
+<!--                    <h6 class="dropdown-header">New Messages:</h6>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item" href="#">-->
+<!--                        <strong>David Miller</strong>-->
+<!--                        <span class="small float-right text-muted">11:21 AM</span>-->
+<!--                        <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item" href="#">-->
+<!--                        <strong>Jane Smith</strong>-->
+<!--                        <span class="small float-right text-muted">11:21 AM</span>-->
+<!--                        <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item" href="#">-->
+<!--                        <strong>John Doe</strong>-->
+<!--                        <span class="small float-right text-muted">11:21 AM</span>-->
+<!--                        <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item small" href="#">View all messages</a>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--            <li class="nav-item dropdown">-->
+<!--                <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                    <i class="fa fa-fw fa-bell"></i>-->
+<!--                    <span class="d-lg-none">Alerts-->
+<!--              <span class="badge badge-pill badge-warning">6 New</span>-->
+<!--            </span>-->
+<!--                    <span class="indicator text-warning d-none d-lg-block">-->
+<!--              <i class="fa fa-fw fa-circle"></i>-->
+<!--            </span>-->
+<!--                </a>-->
+<!--                <div class="dropdown-menu" aria-labelledby="alertsDropdown">-->
+<!--                    <h6 class="dropdown-header">New Alerts:</h6>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item" href="#">-->
+<!--              <span class="text-success">-->
+<!--                <strong>-->
+<!--                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>-->
+<!--              </span>-->
+<!--                        <span class="small float-right text-muted">11:21 AM</span>-->
+<!--                        <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item" href="#">-->
+<!--              <span class="text-danger">-->
+<!--                <strong>-->
+<!--                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>-->
+<!--              </span>-->
+<!--                        <span class="small float-right text-muted">11:21 AM</span>-->
+<!--                        <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item" href="#">-->
+<!--              <span class="text-success">-->
+<!--                <strong>-->
+<!--                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>-->
+<!--              </span>-->
+<!--                        <span class="small float-right text-muted">11:21 AM</span>-->
+<!--                        <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item small" href="#">View all alerts</a>-->
+<!--                </div>-->
+<!--            </li>-->
             <li class="nav-item logo-admin">
                 <a href="#">
                     <img src="<?php echo base_url('uploads/site/user.png') ?>" class="img-circle" alt="Avatar">
@@ -291,19 +291,54 @@ else:
         </div>
     </div>
     <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url() ?>js/jquery-1.10.2.js"></script>
     <script src="<?php echo base_url() ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url() ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="<?php echo base_url() ?>vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="<?php echo base_url() ?>vendor/chart.js/Chart.min.js"></script>
+<!--    <script src="--><?php //echo base_url() ?><!--vendor/chart.js/Chart.min.js"></script>-->
     <script src="<?php echo base_url() ?>vendor/datatables/jquery.dataTables.js"></script>
     <script src="<?php echo base_url() ?>vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="<?php echo base_url() ?>js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="<?php echo base_url() ?>js/sb-admin-datatables.min.js"></script>
-    <script src="<?php echo base_url() ?>js/sb-admin-charts.min.js"></script>
+<!--    <script src="--><?php //echo base_url() ?><!--js/sb-admin-charts.min.js"></script>-->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+           $('#dataUser').DataTable({
+                    "ajax": "<?php echo base_url('wp-admin/user/data-user') ?>"
+           });
+        });
+
+        $("#dataUser").on("click", ".userdelete #userDelete", function(){
+            var table = $('#dataUser').DataTable();
+            var mydata = $(this).attr('value');
+            var name = $(this).attr('data');
+            var conf=confirm("Are you sure you want to delet this : "+name);
+            if(conf){
+                var row = $(this).parents('tr');
+                // table.row( $(this).parents('tr') ).remove().draw();
+                $.ajax({
+                    type : "post",
+                    url: "<?php echo base_url('wp-admin/user/delete') ?>",
+                    data: {'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>','idUser':mydata},
+                    async:false,
+                    success: function(data){
+                        if(data ==1)
+                        {
+                            row.remove();
+                        }
+                    }
+                });
+            }
+            else {
+                return false;
+            }
+        });
+    </script>
 </div>
 </body>
 

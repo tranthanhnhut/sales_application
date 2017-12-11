@@ -56,4 +56,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['wp-admin'] = 'ci_Admin';
 $route['login']                     = 'login';
 $route['login/logout']              = 'login/logout';
+
+//Thành viên
 $route['wp-admin/user'] = 'ci_user/index';
+$route['wp-admin/user/data-user'] = 'ci_user/dataUser';
+$route['wp-admin/user/edit/(:num)'] = 'ci_user/edit/$1';
+$route['wp-admin/user/delete'] = 'ci_user/delete';
