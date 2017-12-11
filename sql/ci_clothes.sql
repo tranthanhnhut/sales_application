@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 09, 2017 lúc 11:26 SA
+-- Thời gian đã tạo: Th12 11, 2017 lúc 11:12 SA
 -- Phiên bản máy phục vụ: 10.1.21-MariaDB
 -- Phiên bản PHP: 5.6.30
 
@@ -284,16 +284,18 @@ CREATE TABLE `user` (
   `user` varchar(100) NOT NULL,
   `pass` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `group_admin` tinyint(3) NOT NULL
+  `group_admin` tinyint(3) NOT NULL,
+  `status` tinyint(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`id`, `user`, `pass`, `email`, `group_admin`) VALUES
-(1, 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 'trannhut2809.hotech@gmail.com', 1),
-(2, 'member', 'e10adc3949ba59abbe56e057f20f883e', 'haolynguyen@gmail.com', 2);
+INSERT INTO `user` (`id`, `user`, `pass`, `email`, `group_admin`, `status`) VALUES
+(1, 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 'trannhut2809.hotech@gmail.com', 1, 1),
+(2, 'member', 'e10adc3949ba59abbe56e057f20f883e', 'haolynguyen@gmail.com', 2, 1),
+(3, 'bill', '5f9e794323b453885f5181f1b624d0b', 'phongkhamdaitin.binhduong@gmail.com', 3, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -412,7 +414,7 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
