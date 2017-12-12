@@ -1,5 +1,5 @@
 <h2>Chỉnh sửa thành viên</h2>
-<form  class="form-create-menu" method="post" action="<?php echo base_url('wp-admin/menu/edit/'.$data[0]['id']) ?>">
+<form  class="form-create-menu" method="post" action="<?php echo base_url('wp-admin/user/edit/'.$data[0]['id']) ?>">
     <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
     <input type="hidden" name="id" value="<?php echo $data[0]['id'] ?>" id="id">
 
@@ -16,10 +16,10 @@
     <div class="form-group col-md-4">
         <label for="title">Chức danh</label>
 <!--        <input type="text" class="form-control" id="group_admin" value="--><?php //echo $data[0]['group_admin']?><!--" name="group_admin">-->
-        <select class="form-control" name="group_admin" id="status">
+        <select class="form-control" name="group_admin" id="group_admin">
             <option value="1" <?php if($data[0]['group_admin'] ==1) echo 'selected="selected"'; ?> >Quản trị viên</option>
-            <option value="0" <?php if($data[0]['group_admin'] ==2) echo 'selected="selected"'; ?> >Nhập sản phẩm</option>
-            <option value="0" <?php if($data[0]['group_admin'] ==3) echo 'selected="selected"'; ?> >Tiếp hóa đơn</option>
+            <option value="2" <?php if($data[0]['group_admin'] ==2) echo 'selected="selected"'; ?> >Nhập sản phẩm</option>
+            <option value="3" <?php if($data[0]['group_admin'] ==3) echo 'selected="selected"'; ?> >Tiếp hóa đơn</option>
         </select>
     </div>
 
@@ -37,11 +37,11 @@
         <label for="status">Trạng thái:</label>
         <select class="form-control" name="status" id="status">
             <option value="1" <?php if($data[0]['status'] ==1) echo 'selected="selected"'; ?> >Hoạt động</option>
-            <option value="0" <?php if($data[0]['status'] ==0) echo 'selected="selected"'; ?> >Ngừng hoạt động</option>
+            <option value="0" <?php if($data[0]['status'] ==0) echo 'selected="selected"'; ?> >Tạm ngừng hoạt động</option>
         </select>
     </div>
     <div class="col-md-12">
-        <button type="submit" name="btnEditMenu" class="btn btn-primary">Submit</button>
-        <button type="submit" name="btnBackMenu" class="btn btn-default">Back</button>
+        <button type="submit" name="btnEditUser" class="btn btn-primary">Submit</button>
+        <button type="submit" name="btnBackUser" class="btn btn-default">Back</button>
     </div>
 </form>

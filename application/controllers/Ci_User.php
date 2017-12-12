@@ -39,7 +39,7 @@ class Ci_User extends CI_Controller
         $draw = intval($this->input->get("draw"));
         $start = intval($this->input->get("start"));
         $length = intval($this->input->get("length"));
-        $query = $this->db->select('id,	user,email,group_admin,status')->get('user');
+        $query = $this->db->select('id,	user,email,group_admin,status,remove')->where(array('remove' => 1))->get('user');
         $row = array();
         $data = array();
         foreach($query->result_array() as $key =>$value)
@@ -47,9 +47,8 @@ class Ci_User extends CI_Controller
             $data[] = array(
                 $value['user'],
                 $value['email'],
-//                ($value['group_admin'] == 1) ? 'Quản trị viên' : 'Thành viên',
                 ($value['group_admin']==1)? 'Quản trị viên' : (($value['group_admin']==2)?'Nhập sản phẩm':(($value['group_admin']==3)?'Tiếp hóa đơn': '')),
-                ($value['status']) ? 'Hoạt động' : 'Ngừng hoạt động',
+                ($value['status']) ? 'Hoạt động' : 'Tạm ngừng hoạt động',
                 $value[] = '<a href="'.base_url('wp-admin/user/edit/'.$value['id']).'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>',
                 $value[] = '<a class="userdelete"><span value="'.$value['id'].'" data="'.$value['user'].'" name="delete" id="userDelete"><i class="fa fa-trash-o" aria-hidden="true"></i></span></a>'
             );
@@ -65,7 +64,7 @@ class Ci_User extends CI_Controller
     }
 
     public function edit($id){
-        if(isset($_POST['btnEditMenu']))
+        if(isset($_POST['btnEditUser']))
         {
             $user =  $this->security->xss_clean($this->input->post('user'));
             $email =  $this->security->xss_clean($this->input->post('email'));
@@ -87,7 +86,7 @@ class Ci_User extends CI_Controller
             }
 
         }
-        else if(isset($_POST['btnBackMenu']))
+        else if(isset($_POST['btnBackUser']))
         {
             redirect(base_url('wp-admin/user'));
         }
@@ -102,7 +101,16 @@ class Ci_User extends CI_Controller
 
     public function delete()
     {
-
+        $data = array(
+            'remove' => 0
+        );
+        $id = $this->security->xss_clean($this->input->post('idUser'));
+        $this->db->where('id', $id);
+        $this->db->update('user', $data);
+        if ($this->db->trans_status() === TRUE){
+            echo 1;
+            exit();
+        }
     }
 
 

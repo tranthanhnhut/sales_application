@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 11, 2017 lúc 11:12 SA
+-- Thời gian đã tạo: Th12 12, 2017 lúc 10:48 SA
 -- Phiên bản máy phục vụ: 10.1.21-MariaDB
 -- Phiên bản PHP: 5.6.30
 
@@ -285,17 +285,18 @@ CREATE TABLE `user` (
   `pass` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `group_admin` tinyint(3) NOT NULL,
-  `status` tinyint(3) NOT NULL
+  `status` tinyint(3) NOT NULL,
+  `remove` int(3) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`id`, `user`, `pass`, `email`, `group_admin`, `status`) VALUES
-(1, 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 'trannhut2809.hotech@gmail.com', 1, 1),
-(2, 'member', 'e10adc3949ba59abbe56e057f20f883e', 'haolynguyen@gmail.com', 2, 1),
-(3, 'bill', '5f9e794323b453885f5181f1b624d0b', 'phongkhamdaitin.binhduong@gmail.com', 3, 0);
+INSERT INTO `user` (`id`, `user`, `pass`, `email`, `group_admin`, `status`, `remove`) VALUES
+(1, 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 'trannhut2809.hotech@gmail.com', 1, 1, 1),
+(2, 'member', 'e10adc3949ba59abbe56e057f20f883e', 'haolynguyen@gmail.com', 2, 1, 1),
+(3, 'bill', '5f9e794323b453885f5181f1b624d0b', 'phongkhamdaitin.binhduong@gmail.com', 3, 1, 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
